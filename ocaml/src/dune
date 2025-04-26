@@ -1,0 +1,6 @@
+(include_subdirs no)
+
+(executable
+ (name main)
+ (modules main leitor_base_dados dominio_item orcamento orcamento_mecanico orcamento_total)
+ (libraries str unix))
