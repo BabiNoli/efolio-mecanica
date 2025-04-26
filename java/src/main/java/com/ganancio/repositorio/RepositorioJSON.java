@@ -1,19 +1,22 @@
 // RepositorioJSON.java
 package com.ganancio.repositorio;
 
-import com.ganancio.model.ResumoOrcamento;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.ganancio.model.ResumoOrcamento;
+
 public class RepositorioJSON {
-    private static final String ARQUIVO = "orcamentos.json";
+    private static final Path ARQUIVO = Paths.get(System.getProperty("user.dir"), "java", "orcamentos.json");
+     
     private final ObjectMapper mapper;
 
     public RepositorioJSON() {
@@ -26,13 +29,18 @@ public class RepositorioJSON {
         List<ResumoOrcamento> todos = carregarTodos();
         todos.add(resumo);
         mapper.writerWithDefaultPrettyPrinter()
-              .writeValue(new File(ARQUIVO), todos);  // <-- aqui aplica o formato bonito
+             .writeValue(ARQUIVO.toFile(), todos);
     }
 
     public List<ResumoOrcamento> carregarTodos() {
         try {
-            File f = new File(ARQUIVO);
-            if (!f.exists()) return new ArrayList<>();
+            // converte o Path em File
+            File f = ARQUIVO.toFile();
+            if (!f.exists()) {
+                // opcional: garante que o diretório exista
+                f.getParentFile().mkdirs();
+                return new ArrayList<>();
+            }
             return mapper.readValue(f, new TypeReference<List<ResumoOrcamento>>() {});
         } catch (Exception e) {
             e.printStackTrace(); // para ajudar a identificar erros

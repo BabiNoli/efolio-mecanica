@@ -32,6 +32,10 @@ public class InfoPeca {
         this.precoLiquido = precoLiquido;
     }
 
+    public InfoPeca(int id, String nome, double bruto, double desc, double liq) {
+        this(id, nome, "", "", bruto, desc, liq);
+    }
+
     // getters/setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }

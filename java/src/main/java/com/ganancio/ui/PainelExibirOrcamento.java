@@ -19,6 +19,16 @@ public class PainelExibirOrcamento extends JPanel {
     private final JButton   botaoGerarPdf;
     private final JButton   botaoVoltar;
 
+    private String idsServicos;
+    private String nomeCliente;
+    private String dataNasc;
+
+    public void setDadosEntrada(String idsServicos, String nomeCliente, String dataNasc) {
+        this.idsServicos = idsServicos;
+        this.nomeCliente = nomeCliente;
+        this.dataNasc    = dataNasc;
+    }
+
     public PainelExibirOrcamento() {
         setLayout(new BorderLayout(10,10));
 
@@ -68,5 +78,17 @@ public class PainelExibirOrcamento extends JPanel {
 
     public void adicionarAcaoVoltar(ActionListener acao) {
         botaoVoltar.addActionListener(acao);
+    }
+
+    public String getIdsServicos() {
+        return idsServicos;
+    }
+
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public String getDataNasc() {
+        return dataNasc;
     }
 }

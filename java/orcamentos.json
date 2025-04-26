@@ -2,7 +2,16 @@
   "idOrcamento" : "20250426222348",
   "nomeCliente" : "",
   "dataNascimento" : "__/__/____",
-  "dataOrcamento" : [ 2025, 4, 26 ],
+  "dataOrcamento" : "2025-04-26",
+  "pecas" : [ ],
+  "maoDeObra" : [ ],
+  "custoFixo" : 0.0,
+  "total" : 0.0
+}, {
+  "idOrcamento" : "117e0a30-cba7-463e-88ce-be79979c16ad",
+  "nomeCliente" : null,
+  "dataNascimento" : null,
+  "dataOrcamento" : "2025-04-26",
   "pecas" : [ ],
   "maoDeObra" : [ ],
   "custoFixo" : 0.0,
