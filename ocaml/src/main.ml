@@ -106,12 +106,12 @@ let () =
       resumo.mao_de_obra;
 
     (* Somatórios e total *)
-    Printf.printf "\nCusto Fixo Serviços: %.2f\n" resumo.custo_fixo;
-    Printf.printf "Σ Peças (bruto):      %.2f\n" resumo.soma_pecas;
-    Printf.printf "Σ Desconto Peças:     %.2f\n" resumo.soma_desc_pecas;
-    Printf.printf "Σ Mão-obra (bruto):   %.2f\n" resumo.soma_mo;
-    Printf.printf "Σ Desconto Mão-obra:  %.2f\n" resumo.soma_desc_mo;
-    Printf.printf "\nTotal Final:          %.2f\n" resumo.total
+    Printf.printf "\nCusto Fixo dos Serviços:          %.2f\n" resumo.custo_fixo;
+    Printf.printf "Soma das Peças (bruto):           %.2f\n" resumo.soma_pecas;
+    Printf.printf "Soma dos Desconto dasPeças:       %.2f\n" resumo.soma_desc_pecas;
+    Printf.printf "Soma da Mão-obra (bruto):         %.2f\n" resumo.soma_mo;
+    Printf.printf "Soma dos Desconto de Mão-obra:    %.2f\n" resumo.soma_desc_mo;
+    Printf.printf "\nTotal Final:                     %.2f\n" resumo.total
 
 
   (* ajuda *)

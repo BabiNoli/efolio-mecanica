@@ -1,4 +1,3 @@
-// PainelNovoOrcamento.java
 package com.ganancio.ui;
 
 import java.awt.GridBagConstraints;
@@ -15,63 +14,47 @@ import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
 public class PainelNovoOrcamento extends JPanel {
-    private final JTextField          campoNomeCliente;
-    private final JFormattedTextField campoDataNascimento;
-    private final JTextField          campoIdsServicos;
-    private final JButton             botaoGerarOrcamento;
-    private final JButton             botaoVoltar;
+  private final JTextField          campoIds;
+  private final JTextField          campoNome;
+  private final JFormattedTextField campoData;
+  private final JButton             botaoGerar;
+  private final JButton             botaoVoltar;
 
-    public PainelNovoOrcamento() {
-        setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5,5,5,5);
-        gbc.fill   = GridBagConstraints.HORIZONTAL;
+  public PainelNovoOrcamento() {
+    setLayout(new GridBagLayout());
+    GridBagConstraints c = new GridBagConstraints();
+    c.insets = new Insets(6,6,6,6); c.fill = GridBagConstraints.HORIZONTAL;
 
-        JLabel rotuloNome = new JLabel("Nome do Cliente:");
-        campoNomeCliente  = new JTextField(20);
-
-        JLabel rotuloData = new JLabel("Data Nasc. (dd/MM/yyyy):");
-        try {
-            MaskFormatter mf = new MaskFormatter("##/##/####");
-            mf.setPlaceholderCharacter('_');
-            campoDataNascimento = new JFormattedTextField(mf);
-        } catch(ParseException e) {
-            throw new RuntimeException(e);
-        }
-
-        JLabel rotuloIds = new JLabel("IDs dos Serviços (ex:1,2,5):");
-        campoIdsServicos = new JTextField(15);
-
-        botaoGerarOrcamento = new JButton("Gerar Orçamento");
-        botaoVoltar         = new JButton("Voltar");
-
-        gbc.gridx = 0; gbc.gridy = 0; add(rotuloNome, gbc);
-        gbc.gridx = 1;            add(campoNomeCliente, gbc);
-        gbc.gridx = 0; gbc.gridy = 1; add(rotuloData, gbc);
-        gbc.gridx = 1;            add(campoDataNascimento, gbc);
-        gbc.gridx = 0; gbc.gridy = 2; add(rotuloIds, gbc);
-        gbc.gridx = 1;            add(campoIdsServicos, gbc);
-        gbc.gridx = 0; gbc.gridy = 3; add(botaoGerarOrcamento, gbc);
-        gbc.gridx = 1;            add(botaoVoltar, gbc);
+    campoIds  = new JTextField(12);
+    campoNome = new JTextField(16);
+    try {
+      campoData = new JFormattedTextField(new MaskFormatter("##/##/####"));
+    } catch(ParseException e) {
+      throw new RuntimeException(e);
     }
+    botaoGerar  = new JButton("Gerar Orçamento");
+    botaoVoltar = new JButton("Voltar");
 
-    public String getNomeCliente() {
-        return campoNomeCliente.getText().trim();
-    }
+    c.gridx=0; c.gridy=0; add(new JLabel("IDs dos Serviços (ex:1,2):"), c);
+    c.gridx=1; add(campoIds, c);
+    c.gridx=0; c.gridy=1; add(new JLabel("Nome do Cliente:"), c);
+    c.gridx=1; add(campoNome, c);
+    c.gridx=0; c.gridy=2; add(new JLabel("Data de Nascimento:"), c);
+    c.gridx=1; add(campoData, c);
+    c.gridx=0; c.gridy=3; add(botaoGerar, c);
+    c.gridx=1; add(botaoVoltar, c);
+  }
 
-    public String getDataNascimento() {
-        return campoDataNascimento.getText().trim();
-    }
+   /** Limpa todos os campos de entrada deste painel */
+  public void limparCampos() {
+    campoIds.setText("");
+    campoNome.setText("");
+    campoData.setText("");  
+  }
 
-    public String getIdsServicos() {
-        return campoIdsServicos.getText().trim();
-    }
-
-    public void adicionarAcaoGerar(ActionListener acao) {
-        botaoGerarOrcamento.addActionListener(acao);
-    }
-
-    public void adicionarAcaoVoltar(ActionListener acao) {
-        botaoVoltar.addActionListener(acao);
-    }
+  public String getIdsServicos()        { return campoIds.getText().trim(); }
+  public String getNomeCliente()        { return campoNome.getText().trim(); }
+  public String getDataNascimento()     { return campoData.getText().trim(); }
+  public void adicionarAcaoGerar(ActionListener a) { botaoGerar.addActionListener(a); }
+  public void adicionarAcaoVoltar(ActionListener a) { botaoVoltar.addActionListener(a); }
 }

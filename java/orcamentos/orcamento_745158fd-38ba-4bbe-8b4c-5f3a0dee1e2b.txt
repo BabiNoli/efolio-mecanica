@@ -1,0 +1,23 @@
+ID Orçamento:       745158fd-38ba-4bbe-8b4c-5f3a0dee1e2b
+Cliente:            Barbara Nunes
+Data de Nascimento: 01/11/1989
+Data do Orçamento:  28/04/2025
+
+PEÇAS:
+3; Bateria A7 Silver Dynamic; Varta; Baterias; bruto=199.00; desc=0.00; líquido=199.00
+21; Filtro de Oleo; MANN-FILTER; Filtros Oleo; bruto=9.99; desc=0.00; líquido=9.99
+33; Oleo Quartz 9000 5W30; Total; Oleos; bruto=42.99; desc=0.00; líquido=42.99
+32; Conjunto Velas Iridium; NGK; Velas; bruto=15.99; desc=0.00; líquido=15.99
+
+MÃO DE OBRA:
+1; horas=0.50; ch=8.00; bruto=4.00; desc=0.00; líquido=4.00
+2; horas=1.00; ch=8.00; bruto=8.00; desc=0.00; líquido=8.00
+3; horas=0.50; ch=8.00; bruto=4.00; desc=0.00; líquido=4.00
+
+Custo Fixo dos Serviços:          0.00
+Soma das Peças (bruto):           267.97
+Soma dos Desconto dasPeças:       0.00
+Soma da Mão-obra (bruto):         16.00
+Soma dos Desconto de Mão-obra:    0.00
+
+Total Final:                     283.97

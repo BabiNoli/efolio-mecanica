@@ -1,0 +1,22 @@
+ID do Orçamento:       61eae1b4-ed61-4c0e-9220-02246ea93dad
+Nome do Cliente:       Rafael Filipe
+Data de Nascimento:    12/05/1999
+Data do Orçamento:     28/04/2025
+
+PEÇAS:
+26; Cabo de Embreagem; LUK; Cabos Aceleracao; bruto=24.99; desc=0.00; líquido=24.99
+17; Discos de Freio Ventilados; Brembo; Discos Travoes; bruto=79.99; desc=0.00; líquido=79.99
+9; Kit de Embreagem Performance; Sachs; Kits Embreagem; bruto=269.99; desc=0.00; líquido=269.99
+
+MÃO DE OBRA:
+10; horas=2.50; ch=9.00; bruto=45.00; desc=0.00; líquido=45.00
+11; horas=4.00; ch=9.00; bruto=72.00; desc=10.80; líquido=61.20
+12; horas=1.50; ch=8.00; bruto=12.00; desc=0.00; líquido=12.00
+
+Custo Fixo dos Serviços:          0.00
+Soma das Peças (bruto):           374.97
+Soma dos Desconto dasPeças:       0.00
+Soma da Mão-obra (bruto):         129.00
+Soma dos Desconto de Mão-obra:    10.80
+
+Total Final:                     493.17

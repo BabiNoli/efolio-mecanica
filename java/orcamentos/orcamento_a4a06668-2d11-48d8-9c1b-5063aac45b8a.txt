@@ -1,0 +1,22 @@
+ID do Orçamento:       a4a06668-2d11-48d8-9c1b-5063aac45b8a
+Nome do Cliente:       bruna
+Data de Nascimento:    01/01/2001
+Data do Orçamento:     28/04/2025
+
+PEÇAS:
+26; Cabo de Embreagem; LUK; Cabos Aceleracao; bruto=24.99; desc=0.00; líquido=24.99
+23; Cabo de Bateria 25mm; Bosch; Cabos Bateria; bruto=29.99; desc=4.50; líquido=25.49
+9; Kit de Embreagem Performance; Sachs; Kits Embreagem; bruto=269.99; desc=0.00; líquido=269.99
+
+MÃO DE OBRA:
+11; horas=4.00; ch=9.00; bruto=72.00; desc=10.80; líquido=61.20
+12; horas=1.50; ch=8.00; bruto=12.00; desc=0.00; líquido=12.00
+13; horas=1.00; ch=8.00; bruto=8.00; desc=0.00; líquido=8.00
+
+Custo Fixo dos Serviços:          0.00
+Soma das Peças (bruto):           324.97
+Soma dos Desconto dasPeças:       4.50
+Soma da Mão-obra (bruto):         92.00
+Soma dos Desconto de Mão-obra:    10.80
+
+Total Final:                     401.67

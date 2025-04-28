@@ -26,7 +26,7 @@ type info_mo = {
   custo_liquido : float; (* custo_bruto -. desconto_mo *)
 }
 
-(** Resultado final do orçamento provisório *)
+(** Resultado final do orçamento*)
 type resumo_orcamento = {
   pecas           : info_peca list;
   mao_de_obra     : info_mo    list;

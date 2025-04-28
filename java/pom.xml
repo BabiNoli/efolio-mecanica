@@ -16,51 +16,33 @@
   </properties>
 
   <dependencies>
-    <!-- Jackson para serialização JSON -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.15.2</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-jsr310</artifactId>
-      <version>2.15.2</version>
-    </dependency>
-
-    <!-- iText para gerar PDF -->
-    <dependency>
-      <groupId>com.itextpdf</groupId>
-      <artifactId>itextpdf</artifactId>
-      <version>5.5.13.3</version>
-    </dependency>
+    <!-- nenhuma dependência externa, só Swing e sua lógica -->
   </dependencies>
 
   <build>
     <plugins>
-      <!-- Gera um JAR “com tudo dentro” -->
+      <!-- Define o mainClass no manifest -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.6.0</version>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
         <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
           <archive>
             <manifest>
-              <!-- entry‐point Swing -->
-              <mainClass>com.ganancio.ui.AppSwing</mainClass>
+              <mainClass>com.ganancio.AppSwing</mainClass>
             </manifest>
           </archive>
         </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals><goal>single</goal></goals>
-          </execution>
-        </executions>
+      </plugin>
+
+      <!-- Permite rodar com mvn exec:java -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <mainClass>com.ganancio.AppSwing</mainClass>
+        </configuration>
       </plugin>
 
       <!-- Compilador Java -->
@@ -71,16 +53,6 @@
         <configuration>
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
-        </configuration>
-      </plugin>
-
-      <!-- Exec plugin para rodar direto: mvn exec:java -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.0</version>
-        <configuration>
-          <mainClass>com.ganancio.ui.AppSwing</mainClass>
         </configuration>
       </plugin>
     </plugins>
